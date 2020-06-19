@@ -32,15 +32,15 @@
             <p v-else >Out of Stock </p>
             <div>
               <label for="add-item-quantity">Quantity: {{ item.quantity }}</label><p></p>
-              <input id="add-item-quantity" type="number" /><p></p>
-              <button>Add to Shopping Cart</button>
+              <input id="add-item-quantity" type="number" v-model.number="item.quantity"/><p></p>
+              <button @click="addToShoppingCart(item.quantity)">Add to Shopping Cart</button>
             </div>
           </div>
         </div>
       </section>
 
       <aside class="shopping-cart">
-        <h2>Shopping Cart: 0 items</h2>
+        <h2>Shopping Cart: {{ shoppingCart }} items</h2>
       </aside>
 
       <h2>Contact Us</h2>
@@ -68,6 +68,7 @@
           email: 'hello@cafewithavue.bakery',
           phone: '+08 88 88 88 88 88',
           restaurantName: 'Cafe with A Vue',
+          shoppingCart: 0,
           simpleMenu: [
             {
               name: 'Crossiant',
@@ -103,6 +104,11 @@
             const currentYear = new Date().getFullYear()
 
             return `Copyright ${this.restaurantName} ${currentYear}`
+          }
+        },
+        methods: {
+          addToShoppingCart(amount){
+              this.shoppingCart += amount
           }
         }
       })
