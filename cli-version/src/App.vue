@@ -77,7 +77,7 @@ export default {
             {
               name: 'Crossiant',
               image: {
-                source: './images/crossiant.jpg',
+                source: '/images/crossiant.jpg',
                 alt: 'A crossiant'
               },
               inStock: true,
@@ -86,7 +86,7 @@ export default {
             {
               name: 'French Baguette',
               image: {
-                source: './images/french-baguette.jpeg',
+                source: '/images/french-baguette.jpeg',
                 alt: 'Four French Baguettes'
               },
               inStock: true,
@@ -95,11 +95,11 @@ export default {
             {
               name: 'Éclair',
               image: {
-                source: './images/eclair.jpg',
+                source: '/images/eclair.jpg',
                 alt: 'Chocolate Éclair'
               },
               inStock: false,
-              quantity: 1
+              quantity: 0
             }
           ]
           }
