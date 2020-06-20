@@ -11,7 +11,15 @@
 
       <section class="menu">
         <h2>Menu</h2>
-        <MenuItem />
+        <MenuItem 
+          v-for="item in simpleMenu"
+          :addToShoppingCart="addToShoppingCart"
+          :name="item.name"
+          :image="item.image"
+          :quantity="item.quantity"
+          :inStock="item.inStock" 
+          :key="item.name"
+        />
       </section>
 
       <aside class="shopping-cart">
@@ -50,6 +58,35 @@ export default {
           phone: '+08 88 88 88 88 88',
           restaurantName: 'Cafe with A Vue',
           shoppingCart: 0,
+          simpleMenu: [
+            {
+              name: 'Crossiant',
+              image: {
+                source: '/images/crossiant.jpg',
+                alt: 'A crossiant'
+              },
+              inStock: true,
+              quantity: 1
+            },
+            {
+              name: 'French Baguette',
+              image: {
+                source: '/images/french-baguette.jpeg',
+                alt: 'Four French Baguettes'
+              },
+              inStock: true,
+              quantity: 1
+            },
+            {
+              name: 'Éclair',
+              image: {
+                source: '/images/eclair.jpg',
+                alt: 'Chocolate Éclair'
+              },
+              inStock: false,
+              quantity: 0
+            }
+          ]
           }
         },
         computed: {
