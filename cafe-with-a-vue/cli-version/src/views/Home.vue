@@ -46,13 +46,11 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import MenuItem from '@/components/MenuItem.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
     MenuItem
   },
   data() {
